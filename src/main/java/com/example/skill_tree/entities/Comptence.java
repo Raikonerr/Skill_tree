@@ -13,6 +13,16 @@ public class Comptence {
     @Basic
     private String name;
 
+    @OneToOne
+    @JoinColumn(name = "reference_id", referencedColumnName = "id")
+    private Reference reference;
+
+    @OneToMany
+    @JoinColumn(name = "validation_id", referencedColumnName = "id")
+    private List<Validation> validations;
+
+
+
 
 
     public Long getId() {
